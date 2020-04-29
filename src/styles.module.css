@@ -1,9 +1,50 @@
 /* add css module styles here (optional) */
+.onnoTable {
+	margin-top: 10px;
+	overflow: hidden;
+}
 
-.test {
-  margin: 2em;
-  padding: 0.5em;
-  border: 2px solid #000;
-  font-size: 2em;
-  text-align: center;
+.onnoTable .pagination {
+	float: right;
+}
+
+.onnoTable .labelPageSize {
+	font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.onnoTable .labelPageSize select {
+	width: auto;
+    display: inline-block;
+}
+
+.onnoTable .labelFilter {
+	float: right;
+	font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.onnoTable .labelFilter input {
+	margin-left: 0.5em;
+    display: inline-block;
+    width: auto;
+}
+
+.onnoTable .arrow {
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	float: right;
+}
+.onnoTable .up {
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+}
+  
+.onnoTable .down {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
 }
