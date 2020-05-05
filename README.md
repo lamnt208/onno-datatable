@@ -58,12 +58,7 @@ class Example extends Component {
 | Prop name  | Description | Default value | Example values
 | ------------- | ------------- | ------------- | ------------- |
 | children (required)  | Includes many Columns | n/a | <Column /> |
-| data  | array objects  | [] | [{ "Name": "Tiger Nixon",
-		"Position": "System Architect",
-		"Office": "Edinburgh",
-		"Age": "61",
-		"Startdate": "2011/04/25",
-		"Salary": "$320,800" }] |
+| data  | array objects  | [] | [{ "Name": "Tiger Nixon", "Position": "System Architect" }] |
 | width  | width of table | '100%' | '90px' |
 | pageSizes  | Total pageSize value which are displayed on page size combobox | [5, 10, 25, 50, 75, 100] | [7, 10, 40] |
 | filterable  | Allow search on table | true |  |
