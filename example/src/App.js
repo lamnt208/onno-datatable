@@ -467,6 +467,8 @@ const App = () => {
 		<Table
 			data={data}
 			filterable={true}
+			tableClassNames={['table', 'table-bordered', 'table-striped', 'table-hover', 'table-sm']}
+			headerClassNames={['thead-dark']}
 		>
 			<Column label="Name" field="Name" sortable={true} />
 			<Column label="Position" field="Position" sortable={true} />

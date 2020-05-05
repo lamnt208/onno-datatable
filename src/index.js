@@ -97,6 +97,16 @@ class Table extends React.Component {
 		this.setState({ pageSize: +e.target.value });
 	}
 
+	getTableClassName() {
+		const { tableClassNames } = this.props;
+		return tableClassNames.map(c => bootstrap[c]).join(' ');
+	}
+
+	getHeaderClassName() {
+		const { headerClassNames } = this.props;
+		return headerClassNames.map(c => bootstrap[c]).join(' ');
+	}
+
 	renderPageSizeSelect() {
 		const { pageSize } = this.state;
 		const { pageSizes } = this.props;
@@ -186,7 +196,7 @@ class Table extends React.Component {
 
 	render() {
 		const { dataRender, pageSize, currentPage, columns } = this.state;
-		const { className, width } = this.props;
+		const { width } = this.props;
 		return (
 			<div className={styles.onnoTable}>
 				<div className={bootstrap.row}>
@@ -199,8 +209,8 @@ class Table extends React.Component {
 				</div>
 				<div className={bootstrap.row}>
 					<div className={bootstrap['col-sm-12']}>
-						<table className={`${bootstrap.table} ${bootstrap['table-bordered']} ${className}`} width={width}>
-							<thead>
+						<table className={this.getTableClassName()} width={width}>
+							<thead className={this.getHeaderClassName()}>
 								<tr>
 									{columns.map((column, index) => this.renderHeaderColumn(column, index))}
 								</tr>
@@ -232,18 +242,20 @@ Table.propTypes = {
 	children: PropTypes.element.isRequired,
 	data: PropTypes.array.isRequired,
 	width: PropTypes.string,
-	className: PropTypes.string,
-	pageSize: PropTypes.array,
+	pageSizes: PropTypes.array,
 	filterable: PropTypes.bool,
 	sortAscIcon: PropTypes.node,
 	sortDescIcon: PropTypes.node,
 	sortIcon: PropTypes.node,
+	tableClassNames: PropTypes.array,
+	headerClassNames: PropTypes.array,
 };
 
 Table.defaultProps = {
+	tableClassNames: ['table', 'table-bordered'],
+	headerClassNames: [],
 	width: '100%',
 	pageSizes: [5, 10, 25, 50, 75, 100],
-	className: '',
 	filterable: true,
 	sortIcon: <i></i>,
 	sortAscIcon: <i className={`${styles.arrow} ${styles.down}`}></i>,
